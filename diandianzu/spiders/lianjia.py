@@ -35,6 +35,7 @@ class DianDianZuSpider(scrapy.Spider):
             item['tradingArea'] = item['tradingArea'][0] if len(item['tradingArea']) > 0 else ''
             item['realName'] = sel.xpath('string(./div[1]/a)').extract()
             item['realName'] = item['realName'][0] if len(item['realName']) > 0 else ''
+            item['realName'] = item['realName'] + item['city'] + item['region'] + item['tradingArea']
 
             url = sel.xpath('string(./div[1]/a/@href)').extract()
             url = url[0] if len(url) > 0 else ''
@@ -64,6 +65,7 @@ class DianDianZuSpider(scrapy.Spider):
             priceUnit = sel.xpath('string(./div[1]/p[1]/span[3])').extract()
             priceUnit = priceUnit[0] if len(priceUnit) > 0 else ''
             item['averagePrice'] = priceNum + priceUnit
+            item['averagePrice'] = item['averagePrice'][:-3]
 
             item['propertyType'] = sel.xpath('string(./div[2]/div/p[2]/span[2])').extract()
             item['propertyType'] = item['propertyType'][0] if len(item['propertyType']) > 0 else ''
@@ -92,6 +94,7 @@ class DianDianZuSpider(scrapy.Spider):
 
         item['propertyCosts'] = response.xpath('string(//*[@id="house-details"]/div/ul/li[8]/p/span[2])').extract()
         item['propertyCosts'] = item['propertyCosts'][0] if len(item['propertyCosts']) > 0 else ''
+        item['propertyCosts'] = item['propertyCosts'][:-5]
         item['parkingSpace'] = response.xpath('string(//*[@id="house-details"]/div/ul/div/li[1]/p/span[2])').extract()
         item['parkingSpace'] = item['parkingSpace'][0] if len(item['parkingSpace']) > 0 else ''
         # 去除'\n'、'\t'、'\r'
@@ -111,12 +114,13 @@ class DianDianZuSpider(scrapy.Spider):
         item['area'] = item['area'][0] if len(item['area']) > 0 else ''
         # 去除'\n'、'\t'、'\r'
         item['area'] = item['area'].replace('\n', '').replace('\t', '').replace(' ', '')
+        item['area'] = item['area'][:-1]
 
         item['buildingArea'] = response.xpath('string(//*[@id="house-details"]/div/ul/li[14]/p/span[2])').extract()
         item['buildingArea'] = item['buildingArea'][0] if len(item['buildingArea']) > 0 else ''
         # 去除'\n'、'\t'、'\r'
         item['buildingArea'] = item['buildingArea'].replace('\n', '').replace('\t', '').replace(' ', '')
-
+        item['buildingArea'] = item['buildingArea'][:-1]
         print("test")
         pass
 

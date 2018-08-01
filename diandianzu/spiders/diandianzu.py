@@ -42,6 +42,7 @@ class DianDianZuSpider(scrapy.Spider):
             item['averagePrice'] = item['averagePrice'][0] if len(item['averagePrice']) > 0 else ''
             # 去除'\n'、'\t'、'\r'
             item['averagePrice'] = item['averagePrice'].replace('\n', '').replace('\t', '').replace(' ', '')
+            item['averagePrice'] = item['averagePrice'][:-3]
 
             url = sel.xpath('./div/div[2]/div[1]/h2/a/@href').extract()
             url = url[0] if len(url) > 0 else ''
@@ -68,6 +69,8 @@ class DianDianZuSpider(scrapy.Spider):
         item['region'] = response.xpath('string(/html/body/div[1]/div[2]/div/div[1]/div/div[2]/p[1]/a[2])').extract()
         item['region'] = item['region'][0] if len(item['region']) > 0 else ''
 
+        item['realName'] = item['realName'] + item['city'] + item['region'] + item['tradingArea']
+
         item['profile'] = response.xpath('string(/html/body/div[1]/div[2]/div/div[2]/div[4]/div[6]/div[1])').extract()
         item['profile'] = item['profile'][0] if len(item['profile']) > 0 else ''
         item['completionTime'] = response.xpath('string(/html/body/div[1]/div[2]/div/div[2]/div[4]/div[1]/ul/li[1]/span[2])').extract()
@@ -85,6 +88,7 @@ class DianDianZuSpider(scrapy.Spider):
 
         item['propertyCosts'] = response.xpath('string(/html/body/div[1]/div[2]/div/div[2]/div[4]/div[3]/ul/li[1]/span[2])').extract()
         item['propertyCosts'] = item['propertyCosts'][0] if len(item['propertyCosts']) > 0 else ''
+        item['propertyCosts'] = item['propertyCosts'][:-3]
         item['parkingSpace'] = response.xpath('string(/html/body/div[1]/div[2]/div/div[2]/div[4]/div[3]/ul/li[2]/span[2])').extract()
         item['parkingSpace'] = item['parkingSpace'][0] if len(item['parkingSpace']) > 0 else ''
 
@@ -95,6 +99,7 @@ class DianDianZuSpider(scrapy.Spider):
 
         item['airfee'] = response.xpath('string(/html/body/div[1]/div[2]/div/div[2]/div[4]/div[4]/ul/li[2]/span[2])').extract()
         item['airfee'] = item['airfee'][0] if len(item['airfee']) > 0 else ''
+        item['airfee'] = item['airfee'][:-3]
         item['airhours'] = response.xpath('string(/html/body/div[1]/div[2]/div/div[2]/div[4]/div[4]/ul/li[3]/span[2])').extract()
         item['airhours'] = item['airhours'][0] if len(item['airhours']) > 0 else ''
 
@@ -110,5 +115,6 @@ class DianDianZuSpider(scrapy.Spider):
 
         item['buildingAveragePrice'] = response.xpath('string(/html/body/div[1]/div[2]/div/div[2]/div[1]/div[1]/div[2])').extract()
         item['buildingAveragePrice'] = item['buildingAveragePrice'][0] if len(item['buildingAveragePrice']) > 0 else ''
+        item['buildingAveragePrice'] = item['buildingAveragePrice'][:-5]
         print("test")
         pass
