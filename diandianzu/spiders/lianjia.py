@@ -1,7 +1,7 @@
 import scrapy
-from selenium import webdriver
 from ..items.lianjiaitems import LianJiaItem
 import time
+from threading import Timer
 
 class DianDianZuSpider(scrapy.Spider):
     name = 'lianjia'
@@ -11,6 +11,7 @@ class DianDianZuSpider(scrapy.Spider):
     download_delay = 5
     start_urls = 'https://sz.fang.lianjia.com/loupan/futianqu-nanshanqu-longgangqu-baoanqu-luohuqu-longhuaqu-yantianqu-guangmingxinqu-pingshanqu-dapengxinqu/pg'
 
+    timer_interval = 3*24*60
     # 抓取深圳所有区域数据
     def start_requests(self):
         for i in range(1, 42):
@@ -22,6 +23,11 @@ class DianDianZuSpider(scrapy.Spider):
     #     url = self.start_urls + '%s' % 1 + '/'
     #     page = scrapy.Request(url)
     #     yield page
+
+    t = Timer(timer_interval, start_requests)
+    t.start()
+    while True:
+        time.sleep(0.1)
 
     def parse(self, response):
         for sel in response.xpath('/html/body/div[4]/ul[2]/li[1]/div'):
