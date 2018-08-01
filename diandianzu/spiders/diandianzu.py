@@ -3,7 +3,7 @@ from selenium import webdriver
 
 import time
 
-from ..items import DiandianzuItem
+from ..items.items import DiandianzuItem
 
 class DianDianZuSpider(scrapy.Spider):
     name = 'diandianzu'
@@ -20,17 +20,18 @@ class DianDianZuSpider(scrapy.Spider):
     def close(self, spider):
         self.browser.close()
 
-    # def start_requests(self):
-    #     for i in  range(4,13):
-    #         url = self.start_urls +'%s'%i + '/'
-    #         page = scrapy.Request(url)
-    #         yield page
-
-    # 暂时只抓取南山区域数据
+    # 抓取深圳所有区域数据
     def start_requests(self):
-        url = self.start_urls + '4/'
-        page = scrapy.Request(url)
-        yield page
+        for i in  range(4,13):
+            url = self.start_urls +'%s'%i + '/'
+            page = scrapy.Request(url)
+            yield page
+
+    # # 暂时只抓取南山区域数据
+    # def start_requests(self):
+    #     url = self.start_urls + '4/'
+    #     page = scrapy.Request(url)
+    #     yield page
 
     def parse(self, response):
         for sel in response.xpath('/html/body/div[1]/div[2]/div[2]/div[1]/div[2]/div'):
