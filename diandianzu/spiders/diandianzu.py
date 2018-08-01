@@ -13,18 +13,18 @@ class DianDianZuSpider(scrapy.Spider):
     download_delay = 5
     start_urls = 'http://sz.diandianzu.com/listing/bt1r'
 
-    # # 抓取深圳所有区域数据
-    # def start_requests(self):
-    #     for i in  range(4,13):
-    #         url = self.start_urls +'%s'%i + '/'
-    #         page = scrapy.Request(url)
-    #         yield page
-
-    # 暂时只抓取南山区域数据
+    # 抓取深圳所有区域数据
     def start_requests(self):
-        url = self.start_urls + '4/'
-        page = scrapy.Request(url)
-        yield page
+        for i in  range(4,13):
+            url = self.start_urls +'%s'%i + '/'
+            page = scrapy.Request(url)
+            yield page
+
+    # # 暂时只抓取南山区域数据
+    # def start_requests(self):
+    #     url = self.start_urls + '4/'
+    #     page = scrapy.Request(url)
+    #     yield page
 
     def parse(self, response):
         for sel in response.xpath('/html/body/div[1]/div[2]/div[2]/div[1]/div[2]/div'):
