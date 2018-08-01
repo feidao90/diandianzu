@@ -10,12 +10,6 @@ class DianDianZuSpider(scrapy.Spider):
     # 设置下载延时
     download_delay = 5
     start_urls = 'https://sz.fang.lianjia.com/loupan/futianqu-nanshanqu-longgangqu-baoanqu-luohuqu-longhuaqu-yantianqu-guangmingxinqu-pingshanqu-dapengxinqu/pg'
-    def __init__(self):
-        self.browser = webdriver.Firefox()
-        self.browser.set_page_load_timeout(30)
-
-    def close(self, spider):
-        self.browser.close()
 
     # 抓取深圳所有区域数据
     def start_requests(self):

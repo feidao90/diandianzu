@@ -13,25 +13,18 @@ class DianDianZuSpider(scrapy.Spider):
     download_delay = 5
     start_urls = 'http://sz.diandianzu.com/listing/bt1r'
 
-    def __init__(self):
-        self.browser = webdriver.Firefox()
-        self.browser.set_page_load_timeout(30)
-
-    def close(self, spider):
-        self.browser.close()
-
-    # 抓取深圳所有区域数据
-    def start_requests(self):
-        for i in  range(4,13):
-            url = self.start_urls +'%s'%i + '/'
-            page = scrapy.Request(url)
-            yield page
-
-    # # 暂时只抓取南山区域数据
+    # # 抓取深圳所有区域数据
     # def start_requests(self):
-    #     url = self.start_urls + '4/'
-    #     page = scrapy.Request(url)
-    #     yield page
+    #     for i in  range(4,13):
+    #         url = self.start_urls +'%s'%i + '/'
+    #         page = scrapy.Request(url)
+    #         yield page
+
+    # 暂时只抓取南山区域数据
+    def start_requests(self):
+        url = self.start_urls + '4/'
+        page = scrapy.Request(url)
+        yield page
 
     def parse(self, response):
         for sel in response.xpath('/html/body/div[1]/div[2]/div[2]/div[1]/div[2]/div'):
@@ -117,22 +110,5 @@ class DianDianZuSpider(scrapy.Spider):
 
         item['buildingAveragePrice'] = response.xpath('string(/html/body/div[1]/div[2]/div/div[2]/div[1]/div[1]/div[2])').extract()
         item['buildingAveragePrice'] = item['buildingAveragePrice'][0] if len(item['buildingAveragePrice']) > 0 else ''
-        # item['houseType'] = response.xpath('string(/html/body/div[1]/div[2]/div/div[1]/div/div[2]/p[1]/a[1])').extract()
-        # item['houseType'] = item['houseType'][0] if len(item['houseType']) > 0 else ''
-        #
-        # item['area'] = response.xpath('string(/html/body/div[1]/div[2]/div/div[1]/div/div[2]/p[1]/a[1])').extract()
-        # item['area'] = item['area'][0] if len(item['area']) > 0 else ''
-        # item['price'] = response.xpath('string(/html/body/div[1]/div[2]/div/div[1]/div/div[2]/p[1]/a[1])').extract()
-        # item['price'] = item['price'][0] if len(item['price']) > 0 else ''
-        #
-        # item['floorNum'] = response.xpath('string(/html/body/div[1]/div[2]/div/div[1]/div/div[2]/p[1]/a[1])').extract()
-        # item['floorNum'] = item['floorNum'][0] if len(item['floorNum']) > 0 else ''
-        # item['decoration'] = response.xpath('string(/html/body/div[1]/div[2]/div/div[1]/div/div[2]/p[1]/a[1])').extract()
-        # item['decoration'] = item['decoration'][0] if len(item['decoration']) > 0 else ''
-        #
-        # item['shortestLease'] = response.xpath('string(/html/body/div[1]/div[2]/div/div[1]/div/div[2]/p[1]/a[1])').extract()
-        # item['shortestLease'] = item['shortestLease'][0] if len(item['shortestLease']) > 0 else ''
-        # item['freeRentPeriod'] = response.xpath('string(/html/body/div[1]/div[2]/div/div[1]/div/div[2]/p[1]/a[1])').extract()
-        # item['freeRentPeriod'] = item['freeRentPeriod'][0] if len(item['freeRentPeriod']) > 0 else ''
         print("test")
         pass
