@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3d14531-59e6-46dc-8d16-9986617dfdb5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/diandianzu/spiders/lianjia.py" beforeDir="false" afterPath="$PROJECT_DIR$/diandianzu/spiders/lianjia.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/diandianzu/spiders/diandianzu.py" beforeDir="false" afterPath="$PROJECT_DIR$/diandianzu/spiders/diandianzu.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,7 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/diandianzu$diandainzu.coverage" NAME="diandainzu Coverage Results" MODIFIED="1533111382721" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/diandianzu" />
+    <SUITE FILE_PATH="coverage/diandianzu$diandainzu.coverage" NAME="diandainzu Coverage Results" MODIFIED="1533182630918" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/diandianzu" />
     <SUITE FILE_PATH="coverage/diandianzu$lianjia.coverage" NAME="lianjia Coverage Results" MODIFIED="1533111498068" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/diandianzu/main" />
   </component>
   <component name="FUSProjectUsageTrigger">
@@ -48,40 +50,48 @@
     <session id="831297061">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.0" value="2" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="27" />
+          <entry key="py" value="31" />
+          <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="27" />
+          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="Python" value="31" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="1403" />
+          <entry key="py" value="1513" />
+          <entry key="txt" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="1403" />
+          <entry key="PLAIN_TEXT" value="14" />
+          <entry key="Python" value="1513" />
         </counts>
       </usages-collector>
     </session>
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="diandianzu" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/diandianzu/spiders/lianjia.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
+            <state relative-caret-position="75">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -92,10 +102,40 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/diandianzu/spiders/diandianzu.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="90" column="8" selection-start-line="90" selection-start-column="8" selection-end-line="90" selection-end-column="58" />
+            <state relative-caret-position="195">
+              <caret line="18" selection-start-line="18" selection-end-line="20" selection-end-column="41" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/diandianzu/items/items.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="780">
+              <caret line="52" column="39" selection-start-line="52" selection-start-column="39" selection-end-line="52" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/requirements.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1140">
+              <caret line="76" column="17" selection-start-line="76" selection-start-column="17" selection-end-line="76" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/diandianzu/items/lianjiaitems.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="37" selection-end-column="40" />
+              <folding>
+                <marker date="1533092683112" expanded="true" signature="964:965" ph="..." />
               </folding>
             </state>
           </provider>
@@ -122,8 +162,10 @@
       <find>buildingArea</find>
       <find>realName</find>
       <find>propertyCosts</find>
-      <find>item['propertyCosts']</find>
       <find>tra</find>
+      <find>item['propertyCosts']</find>
+      <find>trad</find>
+      <find>scrapy</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -137,8 +179,9 @@
         <option value="$PROJECT_DIR$/diandianzu/lianjiamain.py" />
         <option value="$PROJECT_DIR$/diandianzu/items/lianjiaitems.py" />
         <option value="$PROJECT_DIR$/diandianzu/main/main.py" />
-        <option value="$PROJECT_DIR$/diandianzu/spiders/diandianzu.py" />
         <option value="$PROJECT_DIR$/diandianzu/spiders/lianjia.py" />
+        <option value="$PROJECT_DIR$/requirements.txt" />
+        <option value="$PROJECT_DIR$/diandianzu/spiders/diandianzu.py" />
       </list>
     </option>
   </component>
@@ -149,7 +192,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="69" />
+    <option name="x" value="29" />
     <option name="y" value="23" />
     <option name="width" value="1411" />
     <option name="height" value="795" />
@@ -162,7 +205,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -172,31 +214,13 @@
             </path>
             <path>
               <item name="diandianzu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="diandianzu" type="462c0819:PsiDirectoryNode" />
-              <item name="diandianzu" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="diandianzu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="diandianzu" type="462c0819:PsiDirectoryNode" />
-              <item name="diandianzu" type="462c0819:PsiDirectoryNode" />
-              <item name="items" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="diandianzu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="diandianzu" type="462c0819:PsiDirectoryNode" />
-              <item name="diandianzu" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="diandianzu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="diandianzu" type="462c0819:PsiDirectoryNode" />
-              <item name="diandianzu" type="462c0819:PsiDirectoryNode" />
-              <item name="spiders" type="462c0819:PsiDirectoryNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -224,7 +248,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.lianjia">
+  <component name="RunManager" selected="Python.diandainzu">
     <configuration name="diandainzu" type="PythonConfigurationType" factoryName="Python">
       <module name="diandianzu" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -288,16 +312,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="69" y="23" width="1411" height="795" extended-state="0" />
-    <editor active="true" />
+    <frame x="29" y="23" width="1411" height="795" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25273922" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4972826" visible="true" weight="0.25639153" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="Favorites" order="2" sideWeight="0.5027174" side_tool="true" weight="0.25273922" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.25249642" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.45882353" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.30441177" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.32647058" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -305,7 +328,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32941177" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.21029411" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.45882353" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -321,6 +344,25 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/diandianzu/spiders/diandianzu.py</url>
+          <line>32</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/diandianzu/spiders/diandianzu.py</url>
+          <line>18</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/diandianzu/spiders/diandianzu.py</url>
+          <line>21</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
         <watch expression="    # # 暂时只抓取南山区域数据&#10;    # def start_requests(self):&#10;    #     url = self.start_urls + '4/'&#10;    #     page = scrapy.Request(url)&#10;    #     yield page" />
@@ -412,27 +454,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/diandianzu/items/items.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/diandianzu/main/lianjiamain.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/diandianzu/items/lianjiaitems.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="38" column="8" lean-forward="true" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="8" />
-          <folding>
-            <marker date="1533092683112" expanded="true" signature="964:965" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -450,23 +475,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/diandianzu/spiders/diandianzu.py">
+    <entry file="file://$PROJECT_DIR$/diandianzu/spiders/lianjia.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="90" column="8" selection-start-line="90" selection-start-column="8" selection-end-line="90" selection-end-column="58" />
+        <state relative-caret-position="75">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/diandianzu/spiders/lianjia.py">
+    <entry file="file://$PROJECT_DIR$/diandianzu/spiders/diandianzu.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
-          <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
+          <caret line="18" selection-start-line="18" selection-end-line="20" selection-end-column="41" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/diandianzu/items/items.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="52" column="39" selection-start-line="52" selection-start-column="39" selection-end-line="52" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/diandianzu/items/lianjiaitems.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="37" selection-end-column="40" />
+          <folding>
+            <marker date="1533092683112" expanded="true" signature="964:965" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1140">
+          <caret line="76" column="17" selection-start-line="76" selection-start-column="17" selection-end-line="76" selection-end-column="17" />
         </state>
       </provider>
     </entry>
