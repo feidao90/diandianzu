@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f3d14531-59e6-46dc-8d16-9986617dfdb5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/diandianzu/spiders/diandianzu.py" beforeDir="false" afterPath="$PROJECT_DIR$/diandianzu/spiders/diandianzu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/diandianzu/spiders/lianjia.py" beforeDir="false" afterPath="$PROJECT_DIR$/diandianzu/spiders/lianjia.py" afterDir="false" />
-    </list>
+    <list default="true" id="f3d14531-59e6-46dc-8d16-9986617dfdb5" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,8 +123,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/diandianzu/spiders/lianjia.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="17" selection-start-line="17" selection-end-line="22" selection-end-column="24" />
+            <state relative-caret-position="33">
+              <caret line="18" column="29" lean-forward="true" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -337,14 +334,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="335" y="23" width="1755" height="795" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4972826" visible="true" weight="0.093403384" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.5027174" side_tool="true" weight="0.25273922" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.53382355" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.53382355" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3970588" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -353,7 +349,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32941177" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.2" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.2" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -582,8 +578,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/diandianzu/spiders/lianjia.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="17" selection-start-line="17" selection-end-line="22" selection-end-column="24" />
+        <state relative-caret-position="33">
+          <caret line="18" column="29" lean-forward="true" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
