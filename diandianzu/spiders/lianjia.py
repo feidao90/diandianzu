@@ -1,6 +1,8 @@
 import scrapy
 from ..items.lianjiaitems import LianJiaItem
 import time
+import pymysql
+import re
 
 class DianDianZuSpider(scrapy.Spider):
     name = 'lianjia'
@@ -10,12 +12,16 @@ class DianDianZuSpider(scrapy.Spider):
     download_delay = 5
     start_urls = 'https://sz.fang.lianjia.com/loupan/futianqu-nanshanqu-longgangqu-baoanqu-luohuqu-longhuaqu-yantianqu-guangmingxinqu-pingshanqu-dapengxinqu/pg'
 
+    db = pymysql.connect('rm-wz970j84167q2388a.mysql.rds.aliyuncs.com','voffice_sz','Db2017Admin','ziguan_test',charset = 'utf8')
+    cursor = db.cursor()
+
     # 抓取深圳所有区域数据
     def start_requests(self):
         for i in range(1, 42):
             url = self.start_urls + '%s' % i + '/'
             page = scrapy.Request(url)
             yield page
+
     # # 抓取首页数据
     # def start_requests(self):
     #     url = self.start_urls + '%s' % 1 + '/'
@@ -64,7 +70,8 @@ class DianDianZuSpider(scrapy.Spider):
             priceUnit = sel.xpath('string(./div[1]/p[1]/span[3])').extract()
             priceUnit = priceUnit[0] if len(priceUnit) > 0 else ''
             item['averagePrice'] = priceNum + priceUnit
-            item['averagePrice'] = item['averagePrice'][:-3]
+            item['averagePrice'] = re.sub("\D", "", item['averagePrice'])
+            item['averagePrice'] = item['averagePrice'] if len(item['averagePrice']) > 0 else '0'
 
             item['propertyType'] = sel.xpath('string(./div[2]/div/p[2]/span[2])').extract()
             item['propertyType'] = item['propertyType'][0] if len(item['propertyType']) > 0 else ''
@@ -93,7 +100,9 @@ class DianDianZuSpider(scrapy.Spider):
 
         item['propertyCosts'] = response.xpath('string(//*[@id="house-details"]/div/ul/li[8]/p/span[2])').extract()
         item['propertyCosts'] = item['propertyCosts'][0] if len(item['propertyCosts']) > 0 else ''
-        item['propertyCosts'] = item['propertyCosts'][:-5]
+        item['propertyCosts'] = re.sub("\D", "", item['propertyCosts'])
+        item['propertyCosts'] = item['propertyCosts'] if len(item['propertyCosts']) > 0 else '0'
+
         item['parkingSpace'] = response.xpath('string(//*[@id="house-details"]/div/ul/div/li[1]/p/span[2])').extract()
         item['parkingSpace'] = item['parkingSpace'][0] if len(item['parkingSpace']) > 0 else ''
         # 去除'\n'、'\t'、'\r'
@@ -113,13 +122,34 @@ class DianDianZuSpider(scrapy.Spider):
         item['area'] = item['area'][0] if len(item['area']) > 0 else ''
         # 去除'\n'、'\t'、'\r'
         item['area'] = item['area'].replace('\n', '').replace('\t', '').replace(' ', '')
-        item['area'] = item['area'][:-1]
+        item['area'] = re.sub("\D", "", item['area'])
+        item['area'] = item['area'] if len(item['area']) > 0 else '0'
 
         item['buildingArea'] = response.xpath('string(//*[@id="house-details"]/div/ul/li[14]/p/span[2])').extract()
         item['buildingArea'] = item['buildingArea'][0] if len(item['buildingArea']) > 0 else ''
         # 去除'\n'、'\t'、'\r'
         item['buildingArea'] = item['buildingArea'].replace('\n', '').replace('\t', '').replace(' ', '')
-        item['buildingArea'] = item['buildingArea'][:-1]
+        item['buildingArea'] = re.sub("\D", "", item['buildingArea'])
+        item['buildingArea'] = item['buildingArea'] if len(item['buildingArea']) > 0 else '0'
+
+
+        sql = 'INSERT INTO lianjia_spider(city, region,tradingArea,averagePrice,buildingName,propertyType,saleStatus,projectAddress,developer,propertyCompany,latestSalingTime,volumeRate,propertyYears,greeningRate,plannedHouseholds,propertyCosts,parkingSpace,heatingWays,waterSupply,PowerSupply,buildingType,area,buildingArea)' \
+              ' VALUES (\'%s\', \'%s\',\'%s\',%f,\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',%f,\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',%f,%f)' \
+              % (item['city'], item['region'], item['tradingArea'], float(item['averagePrice']), item['realName'],
+                 item['propertyType'], item['saleStatus'], item['projectAddress'], item['developer'],
+                 item['propertyCompany'],
+                 item['latestSalingTime'], item['volumeRate'], item['propertyYears'], item['greeningRate'],
+                 item['plannedHouseholds'], float(item['propertyCosts']), item['parkingSpace'], item['heatingWays'],
+                 item['waterSupply'],
+                 item['PowerSupply'], item['buildingType'], float(item['area']), float(item['buildingArea']))
+        try:
+            # 执行sql语句
+            self.cursor.execute(sql)
+            # 提交到数据库执行
+            self.db.commit()
+        except:
+            # Rollback in case there is any error
+            self.db.rollback()
         pass
 
 
