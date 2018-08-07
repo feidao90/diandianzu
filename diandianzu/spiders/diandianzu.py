@@ -14,7 +14,7 @@ class DianDianZuSpider(scrapy.Spider):
     download_delay = 5
     start_urls = 'http://sz.diandianzu.com/listing/bt1r'
 
-    db = pymysql.connect('rm-wz970j84167q2388a.mysql.rds.aliyuncs.com','voffice_sz','Db2017Admin','ziguan_test',charset = 'utf8')
+    db = pymysql.connect('rm-wz970j84167q2388a.mysql.rds.aliyuncs.com','voffice_sz','Db2017Admin','ziguan_local',charset = 'utf8')
     cursor = db.cursor()
 
     # 抓取深圳所有区域数据

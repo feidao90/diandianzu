@@ -12,7 +12,7 @@ class DianDianZuSpider(scrapy.Spider):
     download_delay = 5
     start_urls = 'https://sz.fang.lianjia.com/loupan/futianqu-nanshanqu-longgangqu-baoanqu-luohuqu-longhuaqu-yantianqu-guangmingxinqu-pingshanqu-dapengxinqu/pg'
 
-    db = pymysql.connect('rm-wz970j84167q2388a.mysql.rds.aliyuncs.com','voffice_sz','Db2017Admin','ziguan_test',charset = 'utf8')
+    db = pymysql.connect('rm-wz970j84167q2388a.mysql.rds.aliyuncs.com','voffice_sz','Db2017Admin','ziguan_local',charset = 'utf8')
     cursor = db.cursor()
 
     # 抓取深圳所有区域数据
